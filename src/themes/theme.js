@@ -72,6 +72,18 @@ const theme = createTheme({
          fontSize: '1rem',
          color: 'hsl(227, 12%, 61%)',
       },
+      navitem: {
+         fontFamily: "'Be Vietnam', sans-serif",
+         fontWeight: 500,
+         fontSize: '1rem',
+         color: 'hsl(228, 39%, 23%)',
+         padding: '4px 0',
+         transition: 'all 200ms linear',
+         '&:hover': {
+            cursor: 'pointer',
+            color: 'hsl(227, 12%, 61%)',
+         },
+      },
    },
    components: {
       MuiButton: {
@@ -86,6 +98,23 @@ const theme = createTheme({
                '&:hover': {
                   backgroundColor: 'hsl(12, 88%, 72.3%)',
                },
+            },
+         },
+      },
+      MuiContainer: {
+         styleOverrides: {
+            root: {
+               [defaultTheme.breakpoints.up('xs')]: {
+                  paddingLeft: 24,
+                  paddingRight: 24,
+               },
+            },
+         },
+      },
+      MuiFormHelperText: {
+         styleOverrides: {
+            root: {
+               fontStyle: 'italic',
             },
          },
       },
