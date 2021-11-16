@@ -29,6 +29,10 @@ const Testimonials = () => {
                height: '700px',
                background: `url('${patternSvg}') no-repeat center / cover`,
                zIndex: -1,
+               display: {
+                  xs: 'none',
+                  md: 'block',
+               },
             },
          }}
       >
@@ -50,6 +54,20 @@ const Testimonials = () => {
                className="mySwiper"
                centeredSlides={true}
                pagination={{ clickable: true }}
+               breakpoints={{
+                  0: {
+                     slidesPerView: 1,
+                     spaceBetween: 24,
+                  },
+                  900: {
+                     slidesPerView: 1.6,
+                     spaceBetween: 32,
+                  },
+                  1200: {
+                     slidesPerView: 2.441,
+                     spaceBetween: 32,
+                  },
+               }}
             >
                <SwiperSlide>
                   <TestimonialItem
@@ -85,7 +103,10 @@ const Testimonials = () => {
          <Button
             variant="contained"
             sx={{
-               mt: '374px',
+               mt: {
+                  xs: '420px',
+                  md: '374px',
+               },
             }}
          >
             Get Started

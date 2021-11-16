@@ -32,13 +32,7 @@ const theme = createTheme({
          secondary: 'hsl(227, 12%, 61%)',
       },
    },
-   breakpoints: {
-      value: {
-         sm: 375,
-         md: 768,
-         lg: 1024,
-      },
-   },
+
    typography: {
       fontFamily: "'Be Vietnam', sans-serif",
       fontWeight: 400,
@@ -53,12 +47,18 @@ const theme = createTheme({
          fontWeight: 700,
          fontSize: '3.4rem',
          color: 'hsl(228, 39%, 23%)',
+         [defaultTheme.breakpoints.between('xs', 'md')]: {
+            fontSize: '2.4rem',
+         },
       },
       h2: {
          fontFamily: "'Be Vietnam', sans-serif",
          fontWeight: 700,
          fontSize: '2.2rem',
          color: 'hsl(228, 39%, 23%)',
+         [defaultTheme.breakpoints.between('xs', 'md')]: {
+            fontSize: '2rem',
+         },
       },
       h5: {
          fontFamily: "'Be Vietnam', sans-serif",
@@ -100,6 +100,22 @@ const theme = createTheme({
                },
             },
          },
+         variants: [
+            {
+               props: { variant: 'icon' },
+               style: {
+                  padding: 0,
+                  margin: 0,
+                  backgroundColor: 'unset',
+                  minWidth: 'unset',
+                  boxShadow: 'none',
+                  '&:hover': {
+                     backgroundColor: 'unset',
+                     boxShadow: 'none',
+                  },
+               },
+            },
+         ],
       },
       MuiContainer: {
          styleOverrides: {

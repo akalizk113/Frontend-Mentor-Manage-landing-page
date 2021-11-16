@@ -81,8 +81,18 @@ const Footer = () => {
          <CustomContainer
             outerSx={{
                maxWidth: '100%',
-               height: '220px',
-               background: ` url(${bgSimplifyDesktop}) repeat center / contain`,
+               height: {
+                  xs: '400px',
+                  md: '220px',
+               },
+
+               backgroundPosition: 'center',
+               backgroundImage: {
+                  xs: `url(${bgSimplifyMobile})`,
+                  md: `url(${bgSimplifyDesktop})`,
+               },
+               backgroundSize: 'cover',
+               backgroundRepeat: 'no-repeat',
                bgcolor: 'primary.main',
                mt: '180px',
             }}
@@ -90,12 +100,32 @@ const Footer = () => {
             innerSx={{
                height: '100%',
                display: 'flex',
-               justifyContent: 'space-between',
+               justifyContent: {
+                  xs: 'center',
+                  md: 'space-between',
+               },
                alignItems: 'center',
                flexWrap: 'nowrap',
+               flexDirection: {
+                  xs: 'column',
+                  md: 'row',
+               },
             }}
          >
-            <Typography variant="h2" maxWidth="450px" color="#fff">
+            <Typography
+               variant="h2"
+               maxWidth="450px"
+               sx={{
+                  textAlign: {
+                     xs: 'center',
+                     md: 'unset',
+                  },
+                  fontSize: {
+                     xs: '2.4rem',
+                  },
+               }}
+               color="#fff"
+            >
                Simplify how your team works today.
             </Typography>
             <Button
@@ -107,6 +137,10 @@ const Footer = () => {
                      bgcolor: '#fff',
                      filter: 'brightness(130%)',
                   },
+                  mt: {
+                     xs: '30px',
+                     md: 'unset',
+                  },
                }}
             >
                Get Started
@@ -116,18 +150,61 @@ const Footer = () => {
             component="section"
             outerSx={{
                maxWidth: '100%',
-               height: '250px',
+               height: {
+                  xs: 'auto',
+                  md: '250px',
+               },
                bgcolor: 'hsl(233, 12%, 13%)',
             }}
             innerSx={{
                pt: '60px',
                display: 'flex',
                position: 'relative',
+               flexDirection: {
+                  xs: 'column',
+                  md: 'row',
+               },
             }}
          >
-            <Box display="flex" flexDirection="column" height="auto">
-               <LogoSvg fill="#fff" />
-               <Stack direction="row" spacing="12px" mt="auto">
+            <Box
+               display="flex"
+               flexDirection="column"
+               height="auto"
+               sx={{
+                  order: {
+                     xs: 2,
+                     md: 0,
+                  },
+                  mt: {
+                     xs: '50px',
+                     md: '0',
+                  },
+                  alignItems: {
+                     xs: 'center',
+                     md: 'unset',
+                  },
+                  pb: {
+                     xs: '90px',
+                     md: 'unset',
+                  },
+               }}
+            >
+               <LogoSvg fill="#fff" style={{ order: 1 }} />
+               <Stack
+                  direction="row"
+                  spacing={{ xs: '26px', md: '12px' }}
+                  mt="auto"
+                  order={{
+                     xs: '0',
+                     md: '2',
+                  }}
+                  sx={{
+                     mb: {
+                        xs: '50px',
+                        md: 'unset',
+                     },
+                  }}
+               >
                   <BrandIcon href="#">
                      <FacebookIcon />
                   </BrandIcon>
@@ -145,8 +222,32 @@ const Footer = () => {
                   </BrandIcon>
                </Stack>
             </Box>
-            <Box display="flex" ml="120px">
-               <Stack direction="column" spacing="16px">
+            <Box
+               display="flex"
+               ml={{
+                  md: '80px',
+                  lg: '120px',
+               }}
+               order={1}
+               mt={{
+                  xs: '60px',
+                  md: 'unset',
+               }}
+               sx={{
+                  justifyContent: {
+                     xs: 'center',
+                     md: 'unset',
+                  },
+               }}
+            >
+               <Stack
+                  direction="column"
+                  spacing="16px"
+                  mr={{
+                     xs: '80px',
+                     md: 'unset',
+                  }}
+               >
                   <FooterNavItem href="#" variant="body1" component="a">
                      Home
                   </FooterNavItem>
@@ -160,7 +261,11 @@ const Footer = () => {
                      About Us
                   </FooterNavItem>
                </Stack>
-               <Stack direction="column" spacing="16px" ml="210px">
+               <Stack
+                  direction="column"
+                  spacing="16px"
+                  ml={{ md: '100px', lg: '210px' }}
+               >
                   <FooterNavItem href="#" variant="body1" component="a">
                      Careers
                   </FooterNavItem>
@@ -176,11 +281,26 @@ const Footer = () => {
                component="form"
                sx={{
                   display: 'flex',
-                  ml: 'auto',
+                  ml: {
+                     xs: 'unset',
+                     md: 'auto',
+                  },
+                  order: {
+                     xs: 0,
+                     md: 2,
+                  },
                }}
                onSubmit={handleSubmit}
             >
-               <FormControl error={errorMessage ? true : false}>
+               <FormControl
+                  error={errorMessage ? true : false}
+                  sx={{
+                     flex: {
+                        xs: 1,
+                        md: 'unset',
+                     },
+                  }}
+               >
                   <CustomInput
                      placeholder="Updates in your inbox…"
                      inputProps={{
@@ -214,8 +334,26 @@ const Footer = () => {
                color="darkgraylishblue.main"
                sx={{
                   position: 'absolute',
-                  right: '24px',
-                  bottom: '0',
+                  right: {
+                     xs: '0',
+                     md: '24px',
+                  },
+                  bottom: {
+                     xs: '24px',
+                     md: '0',
+                  },
+                  left: {
+                     xs: '50%',
+                     md: 'unset',
+                  },
+                  transform: {
+                     xs: 'translateX(-50%)',
+                     md: 'none',
+                  },
+                  fontSize: {
+                     xs: '11px',
+                     md: '16px',
+                  },
                }}
             >
                Copyright 2020. All Rights Reserved

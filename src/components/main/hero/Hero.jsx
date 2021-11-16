@@ -11,12 +11,41 @@ const Hero = () => {
                display: 'flex',
                flexDirection: 'column',
                justifyContent: 'center',
+               order: {
+                  lg: 'unset',
+                  xs: '1',
+               },
+               alignItems: {
+                  lg: 'unset',
+                  xs: 'center',
+               },
+               width: {
+                  xs: '100%',
+                  lg: 'auto',
+               },
             }}
          >
-            <Typography variant="h1">
+            <Typography
+               variant="h1"
+               textAlign={{
+                  xs: 'center',
+                  lg: 'unset',
+               }}
+               sx={{
+                  maxWidth: {
+                     md: '700px',
+                     lg: 'unset',
+                  },
+               }}
+            >
                Bring everyone together to build better products.
             </Typography>
-            <Typography variant="body1" my="32px" maxWidth="340px">
+            <Typography
+               variant="body1"
+               my="32px"
+               maxWidth="340px"
+               textAlign={{ xs: 'center', lg: 'unset' }}
+            >
                Manage makes it simple for software teams to plan day-to-day
                tasks while keeping the larger team goals in view.
             </Typography>
@@ -29,8 +58,24 @@ const Hero = () => {
                Get Started
             </Button>
          </Grid>
-         <Grid item lg={6}>
-            <img src={HeroIllustrationSvg} alt="illustration intro" />
+         <Grid
+            item
+            lg={6}
+            sx={{
+               display: 'flex',
+               justifyContent: 'center',
+               width: '100%',
+               '@media sreen and (min-width: 1200px)': {
+                  display: 'block',
+                  width: 'auto',
+               },
+            }}
+         >
+            <img
+               style={{ maxWidth: '100%' }}
+               src={HeroIllustrationSvg}
+               alt="illustration intro"
+            />
          </Grid>
       </Grid>
    );

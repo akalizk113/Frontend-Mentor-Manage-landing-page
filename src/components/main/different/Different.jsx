@@ -3,16 +3,46 @@ import DifferentItem from './DifferentItem';
 const Different = () => {
    return (
       <Grid container component="section" mt="130px" columnSpacing="80px">
-         <Grid item lg={6}>
+         <Grid
+            item
+            lg={6}
+            sx={{
+               textAlign: {
+                  xs: 'center',
+                  lg: 'unset',
+               },
+               width: {
+                  xs: '100%',
+                  lg: 'unset',
+               },
+            }}
+         >
             <Typography variant="h2">What’s different about Manage?</Typography>
-            <Typography variant="body1" mt="32px" maxWidth="330px">
+            <Typography
+               variant="body1"
+               mt="32px"
+               maxWidth="330px"
+               mx={{
+                  xs: 'auto',
+                  lg: 'unset',
+               }}
+               mb={{
+                  xs: '60px',
+                  lg: 'unset',
+               }}
+            >
                Manage provides all the functionality your team needs, without
                the complexity. Our software is tailor-made for modern digital
                product teams.
             </Typography>
          </Grid>
          <Grid item lg={6}>
-            <Stack lg={6} direction="column" spacing="40px">
+            <Stack
+               lg={6}
+               direction="column"
+               spacing="40px"
+               mx={{ xs: '-8px', md: 'unset' }}
+            >
                <DifferentItem
                   index="01"
                   title="Track company-wide progress"

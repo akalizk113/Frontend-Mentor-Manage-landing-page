@@ -12,7 +12,11 @@ const Avatar = styled('img')(() => ({
 
 const TestimonialItem = ({ img, name, content }) => {
    return (
-      <Box height="256px" position="relative" display="flex">
+      <Box
+         height={{ xs: '286px', md: '256px' }}
+         position="relative"
+         display="flex"
+      >
          <Avatar src={img} alt={name} />
          <Box
             textAlign="center"

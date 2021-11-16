@@ -11,24 +11,49 @@ ul, li, a {
    text-decoration: none;
 }
 
-.App {
-   min-height: 100vh;
-   position: relative;
-}
 
-.App::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   right: 0;
-   background-image: url("./assets/images/bg-tablet-pattern.svg");
-   background-size: cover;
-   background-repeat: no-repeat;
-   width: 500px;
-   height: 500px;
-
-}
 
 .swiper-pagination {
    display: none;
+
+}
+
+@media screen and (min-width: 375px) and (max-width: 899px) {
+   .swiper-pagination {
+      display: block;
+   }
+   .swiper {
+      height: 330px;
+   }
+   .swiper-pagination-bullet-active {
+      background-color: hsl(12, 88%, 59%) !important;
+   }
+}
+
+.nav__container {
+   animation: scale 0.3s linear, fadeIn 0.3s ease; 
+   transform-origin: top right;
+}
+
+@keyframes scale {
+   10% {
+      transform: scale(0.3)
+   }
+   80% {
+      transform: scale(1.1)
+
+   }
+   100% {
+      transform: scale(1)
+   }
+
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
 }

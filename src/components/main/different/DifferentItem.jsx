@@ -10,7 +10,6 @@ const IndexItem = styled('span')(({ theme }) => ({
    height: '40px',
    backgroundColor: theme.palette.primary.main,
    borderRadius: '24px',
-   marginRight: '26px',
    display: 'flex',
    justifyContent: 'center',
    alignItems: 'center',
@@ -19,11 +18,44 @@ const IndexItem = styled('span')(({ theme }) => ({
 const DifferentItem = ({ index, title, desc }) => {
    return (
       <Box>
-         <Box marginBottom="8px" sx={{ display: 'flex', alignItems: 'center' }}>
+         <Box
+            marginBottom="8px"
+            sx={{
+               display: 'flex',
+               alignItems: 'center',
+               backgroundColor: {
+                  xs: 'palered.main',
+                  md: 'unset',
+               },
+               borderTopLeftRadius: {
+                  xs: '24px',
+                  md: 'unset',
+               },
+               borderBottomLeftRadius: {
+                  xs: '24px',
+                  md: 'unset',
+               },
+               mr: {
+                  xs: '-16px',
+                  md: 'unset',
+               },
+            }}
+         >
             <IndexItem>{index}</IndexItem>
-            <Typography variant="h5">{title}</Typography>
+            <Typography
+               variant="h5"
+               pl={{ xs: '16px', md: '26px' }}
+               sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flex: 1,
+                  alignSelf: 'stretch',
+               }}
+            >
+               {title}
+            </Typography>
          </Box>
-         <Typography variant="body1" ml="94px">
+         <Typography variant="body1" ml={{ md: '94px' }}>
             {desc}
          </Typography>
       </Box>
