@@ -53,7 +53,7 @@ const Header = () => {
                content: `''`,
                position: 'absolute',
                top: -100,
-               right: -30,
+               right: 0,
                width: '700px',
                height: '700px',
                background: `url('${patternSvg}') no-repeat center / cover`,

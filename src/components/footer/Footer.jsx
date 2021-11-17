@@ -354,6 +354,7 @@ const Footer = () => {
                      xs: '11px',
                      md: '16px',
                   },
+                  textAlign: 'center',
                }}
             >
                Copyright 2020. All Rights Reserved

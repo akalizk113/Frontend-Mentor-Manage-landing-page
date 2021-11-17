@@ -34,6 +34,10 @@ const Testimonials = () => {
                   md: 'block',
                },
             },
+            // overflow: {
+            //    xs: 'hidden',
+            //    lg: 'visible',
+            // },
          }}
       >
          <Typography variant="h2" mt="150px" textAlign="center">
